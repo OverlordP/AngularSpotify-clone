@@ -23,7 +23,13 @@ import { SideBarComponent } from './components/side-bar/side-bar.component';
     CommonModule
   ],
   exports:[
-    SideBarComponent
+    SideBarComponent,
+    HeaderUserComponent,
+    CardPlayerComponent,
+    MediaPlayerComponent,
+    PlayListBodyComponent,
+    PlayListHeaderComponent,
+    SectionGenericComponent,
   ]
 })
 export class SharedModule { }

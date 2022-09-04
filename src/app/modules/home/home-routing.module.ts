@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SideBarComponent } from '@shared/components/side-bar/side-bar.component';
-
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { FavoritePageComponent } from '@modules/favorites/pages/favorite-page/favorite-page.component';
+import { HistoryPageComponent } from '@modules/history/pages/history-page/history-page.component';
+import { TracksPageComponent } from '@modules/tracks/pages/tracks-page/tracks-page.component';
 
 const routes: Routes = [
   {
-    path:'home',
-    component:HomePageComponent
-  },
+    path:'history',
+    component:HistoryPageComponent
+  }, 
   {
-    path:'dashboard',
-    component:SideBarComponent
-  }
+    path:'favoritos',
+    component:FavoritePageComponent
+  }, 
+  {
+    path:'tracks',
+    loadChildren: () => import('@modules/tracks/tracks.module').then(m => m.TracksModule)
+  }, 
+
 ];
 
 @NgModule({
